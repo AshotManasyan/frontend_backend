@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body link="red" vlink="#ff1000" alink="#ff0000" bgcolor="black">
+    <header>
+        <section class="HEDER">
+            <div>
+                <img class="HeadIMG" src="https://avatars.mds.yandex.net/i?id=b61d6724d3f25ea6b94e4ea3d09617d3_l-5232174-images-thumbs&n=13"" alt="Моё тестовое изображение">
+            </div>
+            <div id="HeadText">
+                <h4 style="margin-top: 0px;margin-bottom: 0px;">ЭЭБО-07-23</h4>
+                <h4 style="margin-top: 1px;margin-bottom: 1px;">Манасян А.Р</h4>
+            </div>
+        </section>
+        <div class="Navigation ">
+        </div>
+    </header>
+
+    <main>
+        <section id="LeftNav">
+            <div>
+                <p>Навигация по странице</p>
+                <p>Фронтенд</p>
+                <p>Бэкэнд</p>
+            </div>
+        </section>
+      
+        <section id="SectionForm">
+            <p>Форма</p>
+            <div>
+                <select>
+                    <option>Визитка</option>
+                    <option>Корпоративный сайт</option>
+                    <option>Интернет-магазин</option>
+                </select>
+                <input type="text" required placeholder="Иванов Иван">
+                <label><input type="email" required placeholder="@email.ru"></label>
+                <label><input type="text" required placeholder="+7"></label>
+                <select>
+                    <option>Russia</option>
+                    <option>China</option>
+                    <option>Africa</option>
+                </select>
+                <label><input type="date"></label>
+                <textarea cols="50" rows="3"></textarea>
+                <button type="submit" id="showMessageButton">Отправить</button>
+                <p id="messageBox" class="hidden">готово</p>
+            </div>
+        </section>
+    </main>
+    <script src="form.js"></script>
+    <footer class="Footer">
+        <div>
+            <p>Манасян</p>
+        </div>
+        <div class="FooterRight">
+            <img id="FooterIMG" 
+            src="https://static.tildacdn.com/tild3038-3134-4035-b861-373361356134/image_288_2.png"
+            alt="Логотип" />
+        </div>
+    </footer>    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('showMessageButton').addEventListener('click', function(event) {
+                event.preventDefault(); // Отменяем стандартное поведение кнопки "отправить"
+
+                const messageBox = document.getElementById('messageBox');
+                messageBox.classList.remove('hidden'); // Показываем сообщение
+                messageBox.classList.add('visible'); // Делаем его видимым
+                
+                // Скрываем сообщение через 3 секунды
+                setTimeout(() => {
+                    messageBox.classList.remove('visible'); // Убираем видимость
+                    setTimeout(() => {
+                        messageBox.classList.add('hidden'); // Скрываем сообщение снова
+                    }, 500); // Ждем завершения анимации
+                }, 3000); // Сообщение будет показано на 3 секунды
+            });
+        });
+    </script>
+</body>
+</html>
